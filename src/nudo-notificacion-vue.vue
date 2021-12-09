@@ -1,10 +1,11 @@
+
 <template>
   <div>
     <b-dropdown
       block
       variant="transparen"
       class="m-2"
-      menu-class="w-50 nudo-cuerpo-notificacion"
+      menu-class="nudo-cuerpo-notificacion"
     >
       <template #button-content>
         <font-awesome-icon icon="bell" />
@@ -42,6 +43,26 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faUserSecret,
+  faBell,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+library.add(faUserSecret);
+library.add(faBell);
+library.add(faClock);
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+
 export default {
   name: "NudoNotificacionVue",
   data() {
